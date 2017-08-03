@@ -16,7 +16,7 @@
     <icon32 urlvalue="org/tauquir/palette4bootstrap/items/resources/BR32.png" />
 
     <description localizing-bundle="org.tauquir.palette4bootstrap.items.Bundle"
-               display-name-key="UI.GRIDCLEARFIX.NAME"
-               tooltip-key="UI.GRIDCLEARFIX.HINT" />
+               display-name-key="GRID.GRIDCLEARFIX.NAME"
+               tooltip-key="GRID.GRIDCLEARFIX.HINT" />
 
 </editor_palette_item>

@@ -16,7 +16,7 @@
     <icon32 urlvalue="org/tauquir/palette4bootstrap/items/resources/BR32.png" />
 
     <description localizing-bundle="org.tauquir.palette4bootstrap.items.Bundle"
-               display-name-key="UI.GRIDCOL.NAME"
-               tooltip-key="UI.GRIDCOL.HINT" />
+               display-name-key="GRID.GRIDCOL.NAME"
+               tooltip-key="GRID.GRIDCOL.HINT" />
 
 </editor_palette_item>
