@@ -98,6 +98,7 @@ public class GridClearFixCustomizer extends javax.swing.JPanel {
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
+        jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
         jTextArea1.setText("<div class=\"clearfix\"></div>"); // NOI18N
         jTextArea1.setFocusable(false);

@@ -11,6 +11,9 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.concurrent.Worker;
 import javafx.embed.swing.JFXPanel;
 import javafx.scene.Scene;
 import javafx.scene.web.WebEngine;
@@ -75,6 +78,20 @@ public class HeadingCustomizer extends javax.swing.JPanel {
                 webEngine = browser.getEngine();
                 webEngine.load(getClass().getResource("resources/preview.html").toExternalForm());
                 fxPanel.setScene(new Scene(browser));
+
+                /* The following code updates the preview window with content
+                   from heading.generateBody() after the webEngine loads the page
+                */
+                webEngine.getLoadWorker().stateProperty().addListener(new ChangeListener<Worker.State>() {
+                    @Override
+                    public void changed(ObservableValue<? extends Worker.State> ov, Worker.State oldState, Worker.State newState) {
+                        if (newState == Worker.State.SUCCEEDED) {
+                            String processedString = heading.generateBody().trim().replaceAll("\n", "&nbsp;");
+                            String script = "document.getElementById('previewContainer').innerHTML='" + processedString + "'";
+                            webEngine.executeScript(script);
+                        }
+                    }
+                });
             }
         });
     }
@@ -82,11 +99,13 @@ public class HeadingCustomizer extends javax.swing.JPanel {
     private void updatePreviews() {
         // Update the Generated Code textArea
         codeGenerated.setText(heading.generateBody());
+        // replace \n with &nbsp; or else Unexpected EOF error will occur inside executeScript()
         // Update the live preview area in javafx thread
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                String script = "document.getElementById('previewContainer').innerHTML='" + heading.generateBody().trim() + "'";
+                String processedString = heading.generateBody().trim().replaceAll("\n", "&nbsp;");
+                String script = "document.getElementById('previewContainer').innerHTML='" + processedString + "'";
                 webEngine.executeScript(script);
             }
         });
@@ -129,6 +148,7 @@ public class HeadingCustomizer extends javax.swing.JPanel {
 
         codeGenerated.setEditable(false);
         codeGenerated.setColumns(20);
+        codeGenerated.setLineWrap(true);
         codeGenerated.setRows(5);
         codeGenerated.setText("<h1>Bootstrap heading</h1>"); // NOI18N
         codeGenerated.setFocusable(false);

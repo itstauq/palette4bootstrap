@@ -34,6 +34,9 @@
             <file name="paragraph.xml" url="items/resources/paragraph.xml">
                 <attr name="position" intvalue="200" />
             </file>
+            <file name="alert.xml" url="items/resources/alert.xml">
+                <attr name="position" intvalue="300" />
+            </file>
         </folder>
     </folder>
 </filesystem>
