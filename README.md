@@ -4,7 +4,7 @@ A Netbeans IDE palette plugin for the Twitter Bootstrap Framework
 
 ## About this project
 
-This is a module for the [NetBeans IDE](http://netbeans.org/) which adds new palettes inside the HTML palette. Access the palette from the menu bar -> Window -> IDE Tools -> Palette or using shortcut Ctrl+Shift+8 after opening any html based file inside the Editor Window. After that, you can drag'n'drop the items into your HTML files. An option panel is then shown for the supported components where various attributes can be configured and *live preview* can be seen for the components.
+This is a module for the [NetBeans IDE](http://netbeans.org/) which adds new palettes inside the HTML palette. Access the palette from the menu bar -> Window -> IDE Tools -> Palette or using shortcut Ctrl+Shift+8 after opening any html based file inside the Editor Window. After that, you can drag and drop the items into your HTML files. An option panel is then shown for the supported components where various attributes can be configured and *live preview* can be seen for the components.
 
 ### Components available
 * **Bootstrap UI**
