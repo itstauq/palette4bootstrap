@@ -37,6 +37,9 @@
             <file name="alert.xml" url="items/resources/alert.xml">
                 <attr name="position" intvalue="300" />
             </file>
+            <file name="blockquote.xml" url="items/resources/blockquote.xml">
+                <attr name="position" intvalue="400" />
+            </file>
         </folder>
     </folder>
 </filesystem>

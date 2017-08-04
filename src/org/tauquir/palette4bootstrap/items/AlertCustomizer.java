@@ -328,7 +328,7 @@ public class AlertCustomizer extends javax.swing.JPanel {
     }//GEN-LAST:event_dialogBtnActionPerformed
 
     private void jComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxItemStateChanged
-        if (evt.getStateChange() == java.awt.event.ItemEvent.SELECTED) {    // Ignore ItemEvent.DESELECTED
+        if (evt.getStateChange() == java.awt.event.ItemEvent.SELECTED) {
             if (!evt.getItem().equals("Default")) {             // Add the selected item to the list
                 alert.addAttribute(evt.getItem().toString()); // if "Default" option was not selected
                 updatePreviews();
