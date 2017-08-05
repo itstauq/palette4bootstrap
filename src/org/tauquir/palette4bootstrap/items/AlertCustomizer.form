@@ -115,6 +115,7 @@
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
             <Property name="text" type="java.lang.String" value="&lt;div class=&quot;alert alert-success&quot;&gt;&#xa;   &lt;strong&gt;Alert!&lt;/strong&gt; This is an alert.&#xa;&lt;/div&gt;" noResource="true"/>
+            <Property name="wrapStyleWord" type="boolean" value="true"/>
             <Property name="focusable" type="boolean" value="false"/>
           </Properties>
         </Component>

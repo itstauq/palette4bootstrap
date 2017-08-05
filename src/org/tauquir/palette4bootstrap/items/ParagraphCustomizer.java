@@ -149,6 +149,7 @@ public class ParagraphCustomizer extends javax.swing.JPanel {
         codeGenerated.setLineWrap(true);
         codeGenerated.setRows(5);
         codeGenerated.setText("<p>Paragraph</p>"); // NOI18N
+        codeGenerated.setWrapStyleWord(true);
         codeGenerated.setFocusable(false);
         jScrollPane1.setViewportView(codeGenerated);
 

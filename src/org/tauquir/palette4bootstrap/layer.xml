@@ -39,6 +39,9 @@
             <file name="blockquote.xml" url="items/resources/blockquote.xml">
                 <attr name="position" intvalue="400"/>
             </file>
+            <file name="type-more.xml" url="items/resources/type-more.xml">
+                <attr name="position" intvalue="500"/>
+            </file>
         </folder>
     </folder>
 </filesystem>

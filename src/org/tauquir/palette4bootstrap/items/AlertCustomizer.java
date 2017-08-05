@@ -142,6 +142,7 @@ public class AlertCustomizer extends javax.swing.JPanel {
         codeGenerated.setColumns(20);
         codeGenerated.setRows(5);
         codeGenerated.setText("<div class=\"alert alert-success\">\n   <strong>Alert!</strong> This is an alert.\n</div>"); // NOI18N
+        codeGenerated.setWrapStyleWord(true);
         codeGenerated.setFocusable(false);
         jScrollPane1.setViewportView(codeGenerated);
 

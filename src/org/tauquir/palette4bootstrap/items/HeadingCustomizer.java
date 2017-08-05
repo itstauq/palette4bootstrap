@@ -151,6 +151,7 @@ public class HeadingCustomizer extends javax.swing.JPanel {
         codeGenerated.setLineWrap(true);
         codeGenerated.setRows(5);
         codeGenerated.setText("<h1>Bootstrap heading</h1>"); // NOI18N
+        codeGenerated.setWrapStyleWord(true);
         codeGenerated.setFocusable(false);
         jScrollPane1.setViewportView(codeGenerated);
 

@@ -179,6 +179,7 @@ public class GridColCustomizer extends javax.swing.JPanel {
         jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
         jTextArea1.setText("<div class=\"col-xs-1\">\n\n</div>"); // NOI18N
+        jTextArea1.setWrapStyleWord(true);
         jTextArea1.setFocusable(false);
         jScrollPane1.setViewportView(jTextArea1);
 
@@ -406,8 +407,10 @@ public class GridColCustomizer extends javax.swing.JPanel {
 
         jTextArea2.setEditable(false);
         jTextArea2.setColumns(20);
+        jTextArea2.setLineWrap(true);
         jTextArea2.setRows(5);
         jTextArea2.setText("<div class=\"col-xs-1\">\n\n</div>"); // NOI18N
+        jTextArea2.setWrapStyleWord(true);
         jTextArea2.setFocusable(false);
         jScrollPane2.setViewportView(jTextArea2);
 

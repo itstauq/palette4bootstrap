@@ -172,8 +172,10 @@ public class BlockquoteCustomizer extends javax.swing.JPanel {
 
         codeGenerated.setEditable(false);
         codeGenerated.setColumns(20);
+        codeGenerated.setLineWrap(true);
         codeGenerated.setRows(5);
         codeGenerated.setText("<blockquote>\n    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>\n   <footer>Someone famous in <cite title=\"Source Title\">Source Title</cite></footer>\n</blockquote>"); // NOI18N
+        codeGenerated.setWrapStyleWord(true);
         codeGenerated.setFocusable(false);
         jScrollPane1.setViewportView(codeGenerated);
 
