@@ -5,6 +5,7 @@
  */
 package org.tauquir.palette4bootstrap.items;
 
+import java.io.File;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.JTextComponent;
 import org.openide.text.ActiveEditorDrop;
@@ -86,7 +87,9 @@ public class BlankPage implements ActiveEditorDrop {
 
     @Override
     public boolean handleTransfer(JTextComponent targetComponent) {
-        BlankPageCustomizer c = new BlankPageCustomizer(this);
+        String currentlyOpenedFilePath = bsPaletteUtilities.getDocumentPath(targetComponent);
+        File currentFile = new File(currentlyOpenedFilePath);
+        BlankPageCustomizer c = new BlankPageCustomizer(this, currentFile);
         boolean accept = c.showDialog();
         if (accept) {
             String body = generateBody();

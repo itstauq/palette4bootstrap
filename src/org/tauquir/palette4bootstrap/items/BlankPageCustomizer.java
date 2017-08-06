@@ -8,31 +8,39 @@ package org.tauquir.palette4bootstrap.items;
 import java.awt.Dialog;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import org.openide.DialogDescriptor;
 import org.openide.DialogDisplayer;
 import org.openide.util.NbBundle;
+import org.tauquir.palette4bootstrap.bsPaletteUtilities;
 
 public class BlankPageCustomizer extends javax.swing.JPanel {
 
     private Dialog dialog = null;
     private DialogDescriptor descriptor = null;
     private boolean dialogOK = false;
-
+    private final JFileChooser imgChooser;
+    private final String currentDirectory;
     private final BlankPage page;
+    FileNameExtensionFilter jsFileNameExtensionFilter = new FileNameExtensionFilter("JavaScript Files", "js");
+    FileNameExtensionFilter cssFileNameExtensionFilter = new FileNameExtensionFilter("Cascading StyleSheets", "css");
 
     /**
      * Creates new form PAGECustomizer
      */
-    public BlankPageCustomizer(BlankPage page) {
+    public BlankPageCustomizer(BlankPage page, File currentFile) {
         this.page = page;
-
+        currentDirectory = currentFile.getParent();
         initComponents();
+        imgChooser = initFileChooser();
     }
 
     public boolean showDialog() {
         dialogOK = false;
-        descriptor = new DialogDescriptor(this, NbBundle.getMessage(BlankPageCustomizer.class, "Customizer.InsertPrefix")
-                + " " + NbBundle.getMessage(BlankPageCustomizer.class, "UI.BLANKPAGE.NAME"), true,
+        descriptor = new DialogDescriptor(this, NbBundle.getMessage(getClass(), "Customizer.InsertPrefix")
+                + " " + NbBundle.getMessage(getClass(), "UI.BLANKPAGE.NAME"), true,
                 DialogDescriptor.OK_CANCEL_OPTION, DialogDescriptor.OK_OPTION,
                 new ActionListener() {
             @Override
@@ -60,6 +68,15 @@ public class BlankPageCustomizer extends javax.swing.JPanel {
         page.setAddIEsupport(jSupportOldIE.isSelected());
     }
 
+    private JFileChooser initFileChooser() {
+        JFileChooser chooser = new JFileChooser();
+        chooser.setApproveButtonText(NbBundle.getMessage(getClass(), "BlankPageCustomizer.FileChooser.ApproveButtonText"));
+        chooser.setCurrentDirectory(new File(currentDirectory));
+        chooser.setDialogTitle(NbBundle.getMessage(getClass(), "BlankPageCustomizer.FileChooser.Title"));
+        chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        return chooser;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -82,6 +99,10 @@ public class BlankPageCustomizer extends javax.swing.JPanel {
         jSupportOldIE = new javax.swing.JCheckBox();
         jAddContainer = new javax.swing.JCheckBox();
         jContainerClass = new javax.swing.JComboBox<>();
+        mainCssBrowseButton = new javax.swing.JButton();
+        jQueryJSBrowseButton = new javax.swing.JButton();
+        mainJSBrowseButton = new javax.swing.JButton();
+        themeCssBrowseButton = new javax.swing.JButton();
 
         org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(BlankPageCustomizer.class, "BlankPageCustomizer.jLabel1.text")); // NOI18N
         jLabel1.setToolTipText(org.openide.util.NbBundle.getMessage(BlankPageCustomizer.class, "BlankPageCustomizer.jTitleField.toolTipText")); // NOI18N
@@ -129,6 +150,34 @@ public class BlankPageCustomizer extends javax.swing.JPanel {
         jContainerClass.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "container", "container-fluid" }));
         jContainerClass.setToolTipText(org.openide.util.NbBundle.getMessage(BlankPageCustomizer.class, "BlankPageCustomizer.jAddContainer.toolTipText")); // NOI18N
 
+        org.openide.awt.Mnemonics.setLocalizedText(mainCssBrowseButton, org.openide.util.NbBundle.getMessage(BlankPageCustomizer.class, "Customizer.Browse")); // NOI18N
+        mainCssBrowseButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mainCssBrowseButtonActionPerformed(evt);
+            }
+        });
+
+        org.openide.awt.Mnemonics.setLocalizedText(jQueryJSBrowseButton, org.openide.util.NbBundle.getMessage(BlankPageCustomizer.class, "Customizer.Browse")); // NOI18N
+        jQueryJSBrowseButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jQueryJSBrowseButtonActionPerformed(evt);
+            }
+        });
+
+        org.openide.awt.Mnemonics.setLocalizedText(mainJSBrowseButton, org.openide.util.NbBundle.getMessage(BlankPageCustomizer.class, "Customizer.Browse")); // NOI18N
+        mainJSBrowseButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mainJSBrowseButtonActionPerformed(evt);
+            }
+        });
+
+        org.openide.awt.Mnemonics.setLocalizedText(themeCssBrowseButton, org.openide.util.NbBundle.getMessage(BlankPageCustomizer.class, "Customizer.Browse")); // NOI18N
+        themeCssBrowseButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                themeCssBrowseButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -144,18 +193,27 @@ public class BlankPageCustomizer extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jTitleField)
-                                    .addComponent(jMainCSS, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
-                                    .addComponent(jJQueryJS)
-                                    .addComponent(jMainJS, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
-                                    .addComponent(jThemeCSS, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jThemeCSS, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jMainJS)
+                                            .addComponent(jJQueryJS, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jMainCSS, javax.swing.GroupLayout.Alignment.LEADING))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jQueryJSBrowseButton, javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(mainJSBrowseButton, javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(themeCssBrowseButton))
+                                            .addComponent(mainCssBrowseButton, javax.swing.GroupLayout.Alignment.TRAILING)))))
                             .addComponent(jSupportOldIE))
                         .addContainerGap())))
         );
@@ -166,23 +224,28 @@ public class BlankPageCustomizer extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jTitleField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
+                .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jMainCSS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
+                    .addComponent(jMainCSS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mainCssBrowseButton))
+                .addGap(7, 7, 7)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jJQueryJS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addGap(10, 10, 10)
+                    .addComponent(jLabel5)
+                    .addComponent(jQueryJSBrowseButton))
+                .addGap(7, 7, 7)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jMainJS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
+                    .addComponent(jMainJS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mainJSBrowseButton))
+                .addGap(7, 7, 7)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jThemeCSS)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jThemeCSS)
+                        .addComponent(themeCssBrowseButton))
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(6, 6, 6)
+                .addGap(4, 4, 4)
                 .addComponent(jSupportOldIE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
@@ -196,6 +259,66 @@ public class BlankPageCustomizer extends javax.swing.JPanel {
         jContainerClass.setEnabled(jAddContainer.isSelected());
     }//GEN-LAST:event_jAddContainerItemStateChanged
 
+    private void mainCssBrowseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainCssBrowseButtonActionPerformed
+        // clear previous selected file value and filters on reopening file chooser
+        imgChooser.setSelectedFile(new File(""));
+        imgChooser.resetChoosableFileFilters();
+        imgChooser.setFileFilter(cssFileNameExtensionFilter);
+        imgChooser.setDialogTitle(NbBundle.getMessage(getClass(), "BlankPageCustomizer.FileChooser.Title") +
+                " " + NbBundle.getMessage(getClass(), "BlankPageCustomizer.jLabel2.text"));
+        int v = imgChooser.showOpenDialog(this);
+        if (v == JFileChooser.APPROVE_OPTION) {
+            File file = imgChooser.getSelectedFile();
+            String relativePath = bsPaletteUtilities.findRelativePath(file.getAbsolutePath(), currentDirectory);
+            jMainCSS.setText(relativePath);
+        }
+    }//GEN-LAST:event_mainCssBrowseButtonActionPerformed
+
+    private void themeCssBrowseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themeCssBrowseButtonActionPerformed
+        // clear previous selected file value and filters on reopening file chooser
+        imgChooser.setSelectedFile(new File(""));
+        imgChooser.resetChoosableFileFilters();
+        imgChooser.setFileFilter(cssFileNameExtensionFilter);
+        imgChooser.setDialogTitle(NbBundle.getMessage(getClass(), "BlankPageCustomizer.FileChooser.Title") +
+                " " + NbBundle.getMessage(getClass(), "BlankPageCustomizer.jLabel4.text"));
+        int v = imgChooser.showOpenDialog(this);
+        if (v == JFileChooser.APPROVE_OPTION) {
+            File file = imgChooser.getSelectedFile();
+            String relativePath = bsPaletteUtilities.findRelativePath(file.getAbsolutePath(), currentDirectory);
+            jThemeCSS.setText(relativePath);
+        }
+    }//GEN-LAST:event_themeCssBrowseButtonActionPerformed
+
+    private void jQueryJSBrowseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jQueryJSBrowseButtonActionPerformed
+        // clear previous selected file value and filters on reopening file chooser
+        imgChooser.setSelectedFile(new File(""));
+        imgChooser.resetChoosableFileFilters();
+        imgChooser.setFileFilter(jsFileNameExtensionFilter);
+        imgChooser.setDialogTitle(NbBundle.getMessage(getClass(), "BlankPageCustomizer.FileChooser.Title") +
+                " " + NbBundle.getMessage(getClass(), "BlankPageCustomizer.jLabel5.text"));
+        int v = imgChooser.showOpenDialog(this);
+        if (v == JFileChooser.APPROVE_OPTION) {
+            File file = imgChooser.getSelectedFile();
+            String relativePath = bsPaletteUtilities.findRelativePath(file.getAbsolutePath(), currentDirectory);
+            jJQueryJS.setText(relativePath);
+        }
+    }//GEN-LAST:event_jQueryJSBrowseButtonActionPerformed
+
+    private void mainJSBrowseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainJSBrowseButtonActionPerformed
+        // clear previous selected file value and filters on reopening file chooser
+        imgChooser.setSelectedFile(new File(""));
+        imgChooser.resetChoosableFileFilters();
+        imgChooser.setFileFilter(jsFileNameExtensionFilter);
+        imgChooser.setDialogTitle(NbBundle.getMessage(getClass(), "BlankPageCustomizer.FileChooser.Title") +
+                " " + NbBundle.getMessage(getClass(), "BlankPageCustomizer.jLabel3.text"));
+        int v = imgChooser.showOpenDialog(this);
+        if (v == JFileChooser.APPROVE_OPTION) {
+            File file = imgChooser.getSelectedFile();
+            String relativePath = bsPaletteUtilities.findRelativePath(file.getAbsolutePath(), currentDirectory);
+            jMainJS.setText(relativePath);
+        }
+    }//GEN-LAST:event_mainJSBrowseButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox jAddContainer;
     private javax.swing.JComboBox<String> jContainerClass;
@@ -207,8 +330,12 @@ public class BlankPageCustomizer extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField jMainCSS;
     private javax.swing.JTextField jMainJS;
+    private javax.swing.JButton jQueryJSBrowseButton;
     private javax.swing.JCheckBox jSupportOldIE;
     private javax.swing.JTextField jThemeCSS;
     private javax.swing.JTextField jTitleField;
+    private javax.swing.JButton mainCssBrowseButton;
+    private javax.swing.JButton mainJSBrowseButton;
+    private javax.swing.JButton themeCssBrowseButton;
     // End of variables declaration//GEN-END:variables
 }
