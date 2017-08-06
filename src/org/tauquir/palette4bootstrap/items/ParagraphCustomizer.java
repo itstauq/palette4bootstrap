@@ -25,7 +25,6 @@ public class ParagraphCustomizer extends javax.swing.JPanel {
 
     private boolean dialogOK = false;
     private JDialog jd;
-    private WebView browser; // If this is changed to a local variable, webEngine will start returning null on recreating the dialog
     private WebEngine webEngine;
     private final JFXPanel fxPanel;
     private final Paragraph paragraph;
@@ -37,6 +36,7 @@ public class ParagraphCustomizer extends javax.swing.JPanel {
         this.paragraph = paragraph;
         initComponents();
         fxPanel = new JFXPanel();   // JFXPanel is required to display JavaFX
+        Platform.setImplicitExit(false);    // Prevents jfx thread from shutting down when dialog is closed
         createScene();              // content inside Swing containers
         jPreview.add(fxPanel, BorderLayout.CENTER);
         fxPanel.setVisible(true);
@@ -73,7 +73,7 @@ public class ParagraphCustomizer extends javax.swing.JPanel {
             @Override
             public void run() {
                 // Set up the embedded browser:
-                browser = new WebView();
+                WebView browser = new WebView();
                 webEngine = browser.getEngine();
                 webEngine.load(getClass().getResource("resources/preview.html").toExternalForm());
                 fxPanel.setScene(new Scene(browser));

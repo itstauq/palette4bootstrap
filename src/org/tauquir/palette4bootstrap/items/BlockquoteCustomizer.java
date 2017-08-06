@@ -25,10 +25,6 @@ public class BlockquoteCustomizer extends javax.swing.JPanel {
 
     private boolean dialogOK = false;
     private JDialog jd;
-    /* If WebView is changed to a local variable, webEngine will start
-    returning null on closing and reopening the dialog
-    */
-    private WebView browser;
     private WebEngine webEngine;
     private final JFXPanel fxPanel;
     private final Blockquote blockquote;
@@ -41,6 +37,7 @@ public class BlockquoteCustomizer extends javax.swing.JPanel {
         initComponents();
         fxPanel = new JFXPanel();   // JFXPanel is required to display JavaFX
         createScene();              // content inside Swing containers
+        Platform.setImplicitExit(false);    // Prevents jfx thread from shutting down when dialog is closed
         jPreview.add(fxPanel, BorderLayout.CENTER);
         fxPanel.setVisible(true);
     }
@@ -78,7 +75,7 @@ public class BlockquoteCustomizer extends javax.swing.JPanel {
             @Override
             public void run() {
                 // Set up the embedded browser:
-                browser = new WebView();
+                WebView browser = new WebView();
                 webEngine = browser.getEngine();
                 webEngine.load(getClass().getResource("resources/preview.html").toExternalForm());
                 fxPanel.setScene(new Scene(browser));
