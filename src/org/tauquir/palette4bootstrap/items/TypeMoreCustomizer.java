@@ -47,8 +47,8 @@ public class TypeMoreCustomizer extends javax.swing.JPanel {
         jd = new JDialog();
         jd.setSize(this.getPreferredSize());
         jd.setIconImage(new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB_PRE));
-        jd.setTitle(NbBundle.getMessage(TypeMoreCustomizer.class, "Customizer.InsertPrefix")
-                + " " + NbBundle.getMessage(TypeMoreCustomizer.class, "TYPOGRAPHY.MORE.NAME"));
+        jd.setTitle(NbBundle.getMessage(getClass(), "Customizer.InsertPrefix")
+                + " " + NbBundle.getMessage(getClass(), "TYPOGRAPHY.MORE.NAME"));
         jd.setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
         jd.setDefaultCloseOperation(JDialog.HIDE_ON_CLOSE);
         jd.add(this);
@@ -254,7 +254,7 @@ public class TypeMoreCustomizer extends javax.swing.JPanel {
                 .addGap(10, 10, 10))
             .addGroup(layout.createSequentialGroup()
                 .addGap(10, 10, 10)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 442, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(10, 10, 10)

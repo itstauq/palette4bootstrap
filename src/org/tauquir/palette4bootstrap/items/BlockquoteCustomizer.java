@@ -50,8 +50,8 @@ public class BlockquoteCustomizer extends javax.swing.JPanel {
         jd = new JDialog();
         jd.setSize(this.getPreferredSize());
         jd.setIconImage(new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB_PRE));
-        jd.setTitle(NbBundle.getMessage(HeadingCustomizer.class, "Customizer.InsertPrefix")
-                + " " + NbBundle.getMessage(HeadingCustomizer.class, "TYPOGRAPHY.BLOCKQUOTE.NAME"));
+        jd.setTitle(NbBundle.getMessage(getClass(), "Customizer.InsertPrefix")
+                + " " + NbBundle.getMessage(getClass(), "TYPOGRAPHY.BLOCKQUOTE.NAME"));
         jd.setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
         jd.setDefaultCloseOperation(JDialog.HIDE_ON_CLOSE);
         jd.add(this);
@@ -142,13 +142,13 @@ public class BlockquoteCustomizer extends javax.swing.JPanel {
         jPreview.setFocusable(false);
         jPreview.setLayout(new java.awt.BorderLayout());
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(BlockquoteCustomizer.class, "BlockquoteCustomizer.jLabel1.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(BlockquoteCustomizer.class, "Customizer.GeneratedCode")); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel2, org.openide.util.NbBundle.getMessage(BlockquoteCustomizer.class, "BlockquoteCustomizer.jLabel2.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel2, org.openide.util.NbBundle.getMessage(BlockquoteCustomizer.class, "Customizer.Preview")); // NOI18N
 
         jPanel1.setLayout(new java.awt.BorderLayout());
 
-        org.openide.awt.Mnemonics.setLocalizedText(dialogOKBtn, org.openide.util.NbBundle.getMessage(BlockquoteCustomizer.class, "BlockquoteCustomizer.dialogOKBtn.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(dialogOKBtn, org.openide.util.NbBundle.getMessage(BlockquoteCustomizer.class, "Customizer.OK")); // NOI18N
         dialogOKBtn.setMaximumSize(new java.awt.Dimension(69, 23));
         dialogOKBtn.setMinimumSize(new java.awt.Dimension(69, 23));
         dialogOKBtn.setPreferredSize(new java.awt.Dimension(69, 23));
@@ -159,7 +159,7 @@ public class BlockquoteCustomizer extends javax.swing.JPanel {
         });
         jPanel1.add(dialogOKBtn, java.awt.BorderLayout.WEST);
 
-        org.openide.awt.Mnemonics.setLocalizedText(dialogCancelBtn, org.openide.util.NbBundle.getMessage(BlockquoteCustomizer.class, "BlockquoteCustomizer.dialogCancelBtn.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(dialogCancelBtn, org.openide.util.NbBundle.getMessage(BlockquoteCustomizer.class, "Customizer.Cancel")); // NOI18N
         dialogCancelBtn.setMaximumSize(new java.awt.Dimension(69, 23));
         dialogCancelBtn.setMinimumSize(new java.awt.Dimension(69, 23));
         dialogCancelBtn.setPreferredSize(new java.awt.Dimension(69, 23));

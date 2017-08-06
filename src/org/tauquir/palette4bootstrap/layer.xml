@@ -43,5 +43,11 @@
                 <attr name="position" intvalue="500"/>
             </file>
         </folder>
+        <folder name="Bootstrap Images">
+            <attr name="position" intvalue="4"/>
+            <file name="image.xml" url="items/resources/image.xml">
+                <attr name="position" intvalue="100"/>
+            </file>
+        </folder>
     </folder>
 </filesystem>

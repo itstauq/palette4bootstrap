@@ -29,8 +29,8 @@ public class GridClearFixCustomizer extends javax.swing.JPanel {
 
     public boolean showDialog() {
         dialogOK = false;
-        descriptor = new DialogDescriptor(this, NbBundle.getMessage(GridClearFixCustomizer.class, "Customizer.InsertPrefix")
-                + " " + NbBundle.getMessage(GridClearFixCustomizer.class, "GRID.GRIDCLEARFIX.NAME"), true,
+        descriptor = new DialogDescriptor(this, NbBundle.getMessage(getClass(), "Customizer.InsertPrefix")
+                + " " + NbBundle.getMessage(getClass(), "GRID.GRIDCLEARFIX.NAME"), true,
                 DialogDescriptor.OK_CANCEL_OPTION, DialogDescriptor.OK_OPTION,
                 new ActionListener() {
             @Override
