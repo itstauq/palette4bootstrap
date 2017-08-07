@@ -3,5 +3,5 @@ AutoUpdate-Show-In-Client: true
 OpenIDE-Module: org.tauquir.palette4bootstrap
 OpenIDE-Module-Layer: org/tauquir/palette4bootstrap/layer.xml
 OpenIDE-Module-Localizing-Bundle: org/tauquir/palette4bootstrap/items/Bundle.properties
-OpenIDE-Module-Specification-Version: 1.2.1
+OpenIDE-Module-Specification-Version: 1.1.0
 

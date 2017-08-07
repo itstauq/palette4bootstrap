@@ -22,19 +22,19 @@ import javax.swing.JDialog;
 import netscape.javascript.JSObject;
 import org.openide.util.NbBundle;
 
-public class GlyphiconCustomizer extends javax.swing.JPanel {
+public class IoniconCustomizer extends javax.swing.JPanel {
 
     private boolean dialogOK = false;
     private JDialog jd;
     private WebEngine webEngine;
     private final JFXPanel fxPanel;
-    private final Glyphicon glyphicon;
+    private final Ionicon ionicon;
 
     /**
      * Creates new form GlyphiconsCustomizer
      */
-    public GlyphiconCustomizer(Glyphicon glyphicon) {
-        this.glyphicon = glyphicon;
+    public IoniconCustomizer(Ionicon ionicon) {
+        this.ionicon = ionicon;
         initComponents();
         fxPanel = new JFXPanel();   // JFXPanel is required to display JavaFX
         Platform.setImplicitExit(false);    // Prevents jfx thread from shutting down when dialog is closed
@@ -49,7 +49,7 @@ public class GlyphiconCustomizer extends javax.swing.JPanel {
         jd.setSize(this.getPreferredSize());
         jd.setIconImage(new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB_PRE));
         jd.setTitle(NbBundle.getMessage(getClass(), "Customizer.InsertPrefix")
-                + " " + NbBundle.getMessage(getClass(), "IMAGES.GLYPHICONS.NAME"));
+                + " " + NbBundle.getMessage(getClass(), "IMAGES.IONICONS.NAME"));
         jd.setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
         jd.setDefaultCloseOperation(JDialog.HIDE_ON_CLOSE);
         jd.add(this);
@@ -58,10 +58,10 @@ public class GlyphiconCustomizer extends javax.swing.JPanel {
         jd.addWindowListener(new WindowAdapter() {
             @Override
             public void windowDeactivated(WindowEvent e) {
-                /* Reset every parameter of glyphicon object so that old values
+                /* Reset every parameter of ionicon object so that old values
                    does not appear on re-opening the dialog */
-                glyphicon.setGlyphName("asterisk");
-                glyphicon.setAriaHidden(true);
+                ionicon.setIconName("alert");
+                ionicon.setAriaHidden(true);
             }
         });
         return dialogOK;
@@ -76,7 +76,7 @@ public class GlyphiconCustomizer extends javax.swing.JPanel {
                 // Set up the embedded browser:
                 WebView browser = new WebView();
                 webEngine = browser.getEngine();
-                webEngine.load(getClass().getResource("resources/glyphiconsSelector.html").toExternalForm());
+                webEngine.load(getClass().getResource("resources/ioniconsSelector.html").toExternalForm());
                 fxPanel.setScene(new Scene(browser));
                 /* The following code is used to run functions after the webpage
                     has completed loading
@@ -96,16 +96,16 @@ public class GlyphiconCustomizer extends javax.swing.JPanel {
 
     /**
      * JavaScript interface object Used to make upcalls from javascript inside
-     * the webpage loaded in the javaFX webview to GlyphiconCustomizer.java
+     * the webpage loaded in the javaFX webview to IoniconCustomizer.java
      */
     @SuppressWarnings("PublicInnerClass")
     public class JSInterface {
         public void setSelection(String selection) {
-            glyphicon.setGlyphName(selection);
-            codeGenerated.setText(glyphicon.generateBody());
+            ionicon.setIconName(selection);
+            codeGenerated.setText(ionicon.generateBody());
         }
         public void closeDialog(boolean dialogAccepted){
-            GlyphiconCustomizer.this.dialogOK = dialogAccepted;
+            IoniconCustomizer.this.dialogOK = dialogAccepted;
             jd.dispose();
         }
     }
@@ -129,7 +129,7 @@ public class GlyphiconCustomizer extends javax.swing.JPanel {
 
         jPanel1.setLayout(new java.awt.BorderLayout());
 
-        org.openide.awt.Mnemonics.setLocalizedText(dialogOKBtn, org.openide.util.NbBundle.getMessage(GlyphiconCustomizer.class, "Customizer.OK")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(dialogOKBtn, org.openide.util.NbBundle.getMessage(IoniconCustomizer.class, "Customizer.OK")); // NOI18N
         dialogOKBtn.setMaximumSize(new java.awt.Dimension(69, 23));
         dialogOKBtn.setMinimumSize(new java.awt.Dimension(69, 23));
         dialogOKBtn.setPreferredSize(new java.awt.Dimension(69, 23));
@@ -140,7 +140,7 @@ public class GlyphiconCustomizer extends javax.swing.JPanel {
         });
         jPanel1.add(dialogOKBtn, java.awt.BorderLayout.WEST);
 
-        org.openide.awt.Mnemonics.setLocalizedText(dialogCancelBtn, org.openide.util.NbBundle.getMessage(GlyphiconCustomizer.class, "Customizer.Cancel")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(dialogCancelBtn, org.openide.util.NbBundle.getMessage(IoniconCustomizer.class, "Customizer.Cancel")); // NOI18N
         dialogCancelBtn.setMaximumSize(new java.awt.Dimension(69, 23));
         dialogCancelBtn.setMinimumSize(new java.awt.Dimension(69, 23));
         dialogCancelBtn.setPreferredSize(new java.awt.Dimension(69, 23));
@@ -155,14 +155,14 @@ public class GlyphiconCustomizer extends javax.swing.JPanel {
         jPreview.setFocusable(false);
         jPreview.setLayout(new java.awt.BorderLayout());
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(GlyphiconCustomizer.class, "Customizer.GeneratedCode")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(IoniconCustomizer.class, "Customizer.GeneratedCode")); // NOI18N
 
         codeGenerated.setEditable(false);
-        codeGenerated.setText("<span class=\"glyphicon glyphicon-asterisk\" aria-hidden=\"true\"></span>"); // NOI18N
+        codeGenerated.setText("<span class=\"icon ion-alert\" aria-hidden=\"true\"></span>"); // NOI18N
         codeGenerated.setFocusable(false);
 
         isAriaHidden.setSelected(true);
-        org.openide.awt.Mnemonics.setLocalizedText(isAriaHidden, org.openide.util.NbBundle.getMessage(GlyphiconCustomizer.class, "GlyphiconCustomizer.isAriaHidden.text")); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(isAriaHidden, org.openide.util.NbBundle.getMessage(IoniconCustomizer.class, "IoniconCustomizer.isAriaHidden.text")); // NOI18N
         isAriaHidden.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 isAriaHiddenActionPerformed(evt);
@@ -217,8 +217,8 @@ public class GlyphiconCustomizer extends javax.swing.JPanel {
     }//GEN-LAST:event_dialogButtonActionPerformed
 
     private void isAriaHiddenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_isAriaHiddenActionPerformed
-        glyphicon.setAriaHidden(isAriaHidden.isSelected());
-        codeGenerated.setText(glyphicon.generateBody());
+        ionicon.setAriaHidden(isAriaHidden.isSelected());
+        codeGenerated.setText(ionicon.generateBody());
     }//GEN-LAST:event_isAriaHiddenActionPerformed
 
 

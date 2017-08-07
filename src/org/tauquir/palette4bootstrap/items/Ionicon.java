@@ -10,17 +10,17 @@ import javax.swing.text.JTextComponent;
 import org.openide.text.ActiveEditorDrop;
 import org.tauquir.palette4bootstrap.bsPaletteUtilities;
 
-public class Glyphicon implements ActiveEditorDrop {
+public class Ionicon implements ActiveEditorDrop {
 
-    private String glyphName = "asterisk";
+    private String iconName = "alert";
     private boolean ariaHidden = true;
 
-    public Glyphicon() {
+    public Ionicon() {
     }
 
     public String generateBody() {
         StringBuilder code = new StringBuilder();
-        code.append("<span class=\"glyphicon glyphicon-").append(glyphName).append("\"");
+        code.append("<span class=\"icon ion-").append(iconName).append("\"");
         if (ariaHidden) {
             code.append(" aria-hidden=\"true\"");
         }
@@ -28,8 +28,8 @@ public class Glyphicon implements ActiveEditorDrop {
         return code.toString();
     }
 
-    public void setGlyphName(String glyphName) {
-        this.glyphName = glyphName;
+    public void setIconName(String iconName) {
+        this.iconName = iconName;
     }
 
     public void setAriaHidden(boolean ariaHidden) {
@@ -38,7 +38,7 @@ public class Glyphicon implements ActiveEditorDrop {
 
     @Override
     public boolean handleTransfer(JTextComponent targetComponent) {
-        GlyphiconCustomizer c = new GlyphiconCustomizer(this);
+        IoniconCustomizer c = new IoniconCustomizer(this);
         boolean accept = c.showDialog();
         if (accept) {
             String body = generateBody();

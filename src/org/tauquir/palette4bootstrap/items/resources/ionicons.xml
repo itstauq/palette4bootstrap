@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    palette4bootstrap - A netbeans palette plugin for the Bootstrap
+    Copyright (c) 2017-2018 Tauquir Ahmed (tauquirahmed93@gmail.com)
+    Licensed under the MIT License.
+-->
+
+<!DOCTYPE editor_palette_item PUBLIC "-//NetBeans//Editor Palette Item 1.0//EN"
+    "http://www.netbeans.org/dtds/editor-palette-item-1_0.dtd">
+
+<editor_palette_item version="1.0">
+
+    <class name="org.tauquir.palette4bootstrap.items.Ionicon" />
+
+    <icon16 urlvalue="org/tauquir/palette4bootstrap/items/resources/BR16.png" />
+    <icon32 urlvalue="org/tauquir/palette4bootstrap/items/resources/BR32.png" />
+
+    <description localizing-bundle="org.tauquir.palette4bootstrap.items.Bundle"
+               display-name-key="IMAGES.IONICONS.NAME"
+               tooltip-key="IMAGES.IONICONS.HINT" />
+
+</editor_palette_item>

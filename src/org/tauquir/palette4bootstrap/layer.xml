@@ -51,6 +51,12 @@
             <file name="glyphicons.xml" url="items/resources/glyphicons.xml">
                 <attr name="position" intvalue="200"/>
             </file>
+            <file name="fontawesome.xml" url="items/resources/fontawesome.xml">
+                <attr name="position" intvalue="300"/>
+            </file>
+            <file name="ionicons.xml" url="items/resources/ionicons.xml">
+                <attr name="position" intvalue="400"/>
+            </file>
         </folder>
     </folder>
 </filesystem>

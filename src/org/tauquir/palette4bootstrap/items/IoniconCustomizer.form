@@ -133,7 +133,7 @@
     <Component class="javax.swing.JTextField" name="codeGenerated">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
-        <Property name="text" type="java.lang.String" value="&lt;span class=&quot;glyphicon glyphicon-asterisk&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;" noResource="true"/>
+        <Property name="text" type="java.lang.String" value="&lt;span class=&quot;icon ion-alert&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;" noResource="true"/>
         <Property name="focusable" type="boolean" value="false"/>
       </Properties>
     </Component>
@@ -141,7 +141,7 @@
       <Properties>
         <Property name="selected" type="boolean" value="true"/>
         <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-          <ResourceString bundle="org/tauquir/palette4bootstrap/items/Bundle.properties" key="GlyphiconCustomizer.isAriaHidden.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
+          <ResourceString bundle="org/tauquir/palette4bootstrap/items/Bundle.properties" key="IoniconCustomizer.isAriaHidden.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
         </Property>
       </Properties>
       <Events>

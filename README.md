@@ -18,6 +18,11 @@ This is a module for the [NetBeans IDE](http://netbeans.org/) which adds new pal
   * Paragraph
   * Alert
   * Blockquote
+  * More
+* **Bootstrap Images**
+  * Image
+  * Glyphicons
+  * Font Awesome
 
 -And many more to come soon.
 
