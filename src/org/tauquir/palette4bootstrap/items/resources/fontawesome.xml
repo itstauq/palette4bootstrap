@@ -16,7 +16,7 @@
     <icon32 urlvalue="org/tauquir/palette4bootstrap/items/resources/BR32.png" />
 
     <description localizing-bundle="org.tauquir.palette4bootstrap.items.Bundle"
-               display-name-key="IMAGES.FONTAWESOME.NAME"
-               tooltip-key="IMAGES.FONTAWESOME.HINT" />
+               display-name-key="MEDIA.FONTAWESOME.NAME"
+               tooltip-key="MEDIA.FONTAWESOME.HINT" />
 
 </editor_palette_item>

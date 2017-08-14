@@ -19,10 +19,13 @@ This is a module for the [NetBeans IDE](http://netbeans.org/) which adds new pal
   * Alert
   * Blockquote
   * More
-* **Bootstrap Images**
+* **Bootstrap MEDIA**
   * Image
   * Glyphicons
-  * Font Awesome
+  * Font Awesome Icons
+  * Ionicons
+  * Carousel
+  * Google Maps
 
 -And many more to come soon.
 

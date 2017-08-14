@@ -10,13 +10,13 @@
 
 <editor_palette_item version="1.0">
 
-    <class name="org.tauquir.palette4bootstrap.items.Ionicon" />
+    <class name="org.tauquir.palette4bootstrap.items.Map" />
 
     <icon16 urlvalue="org/tauquir/palette4bootstrap/items/resources/BR16.png" />
     <icon32 urlvalue="org/tauquir/palette4bootstrap/items/resources/BR32.png" />
 
     <description localizing-bundle="org.tauquir.palette4bootstrap.items.Bundle"
-               display-name-key="MEDIA.IONICONS.NAME"
-               tooltip-key="MEDIA.IONICONS.HINT" />
+               display-name-key="MEDIA.MAP.NAME"
+               tooltip-key="MEDIA.MAP.HINT" />
 
 </editor_palette_item>

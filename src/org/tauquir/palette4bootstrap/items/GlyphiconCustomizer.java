@@ -49,7 +49,7 @@ public class GlyphiconCustomizer extends javax.swing.JPanel {
         jd.setSize(this.getPreferredSize());
         jd.setIconImage(new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB_PRE));
         jd.setTitle(NbBundle.getMessage(getClass(), "Customizer.InsertPrefix")
-                + " " + NbBundle.getMessage(getClass(), "IMAGES.GLYPHICONS.NAME"));
+                + " " + NbBundle.getMessage(getClass(), "MEDIA.GLYPHICONS.NAME"));
         jd.setModalityType(Dialog.ModalityType.APPLICATION_MODAL);
         jd.setDefaultCloseOperation(JDialog.HIDE_ON_CLOSE);
         jd.add(this);
