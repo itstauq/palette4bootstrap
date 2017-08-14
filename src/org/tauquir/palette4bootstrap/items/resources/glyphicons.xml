@@ -16,7 +16,7 @@
     <icon32 urlvalue="org/tauquir/palette4bootstrap/items/resources/BR32.png" />
 
     <description localizing-bundle="org.tauquir.palette4bootstrap.items.Bundle"
-               display-name-key="IMAGES.GLYPHICONS.NAME"
-               tooltip-key="IMAGES.GLYPHICONS.HINT" />
+               display-name-key="MEDIA.GLYPHICONS.NAME"
+               tooltip-key="MEDIA.GLYPHICONS.HINT" />
 
 </editor_palette_item>
