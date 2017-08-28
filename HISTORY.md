@@ -1,3 +1,9 @@
+## [<ins>1.2.0 (28-08-2017)</ins>](https://github.com/tauquirahmed93/palette4bootstrap/releases/tag/v1.2.0)
+#### Added the following palette items
+* **Bootstrap Containers** (NEW)
+  * Container
+  * Panel
+
 ## [<ins>1.1.0 (15-08-2017)</ins>](https://github.com/tauquirahmed93/palette4bootstrap/releases/tag/v1.1.0)
 #### Added the following palette items
 * **Bootstrap Typography**

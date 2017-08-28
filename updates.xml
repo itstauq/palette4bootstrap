@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><module codename="org.tauquir.palette4bootstrap">
-    <module_version install_time="1502737236198" last="true" origin="installer" specification_version="1.1.0">
+    <module_version install_time="1503919333909" last="true" origin="installer" specification_version="1.2.0">
         <file crc="3463573371" name="config/Modules/org-tauquir-palette4bootstrap.xml"/>
-        <file crc="4289075933" name="modules/org-tauquir-palette4bootstrap.jar"/>
+        <file crc="1344756287" name="modules/org-tauquir-palette4bootstrap.jar"/>
     </module_version>
 </module>
