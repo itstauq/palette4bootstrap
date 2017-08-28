@@ -26,12 +26,15 @@ This is a module for the [NetBeans IDE](http://netbeans.org/) which adds new pal
   * Ionicons
   * Carousel
   * Google Maps
+* **Bootstrap Containers**
+  * Container
+  * Panel
 
 -And many more to come soon.
 
 ## Authors
 
-* **Tauquir Ahmed** - *Initial work* - [tauquirahmed93](https://github.com/tauquirahmed93)
+* **Tauquir Ahmed** - *Initial work* - [tahmed1994](https://github.com/tahmed1994)
 
 ## License
 

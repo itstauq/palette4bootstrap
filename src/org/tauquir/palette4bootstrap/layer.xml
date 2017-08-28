@@ -13,7 +13,7 @@
                 <attr name="enabled" boolvalue="true" />
                 <attr name="instanceCreate" methodvalue="org.netbeans.modules.autoupdate.updateprovider.AutoupdateCatalogFactory.createUpdateProvider" />
                 <attr name="instanceOf" stringvalue="org.netbeans.spi.autoupdate.UpdateProvider" />
-                <attr name="url" urlvalue="https://raw.githubusercontent.com/tauquirahmed93/palette4bootstrap/master/updates.xml" />
+                <attr name="url" urlvalue="https://raw.githubusercontent.com/tahmed1994/palette4bootstrap/master/updates.xml" />
             </file>
         </folder>
     </folder>
@@ -73,6 +73,15 @@
             </file>
             <file name="gmaps.xml" url="items/resources/gmaps.xml">
                 <attr name="position" intvalue="600"/>
+            </file>
+        </folder>
+        <folder name="Bootstrap Containers">
+            <attr name="position" intvalue="5" />
+            <file name="container.xml" url="items/resources/container.xml">
+                <attr name="position" intvalue="100"/>
+            </file>
+            <file name="panel.xml" url="items/resources/panel.xml">
+                <attr name="position" intvalue="200"/>
             </file>
         </folder>
     </folder>
