@@ -34,7 +34,7 @@ This is a module for the [NetBeans IDE](http://netbeans.org/) which adds new pal
 
 ## Authors
 
-* **Tauquir Ahmed** - *Initial work* - [tauquirahmed93](https://github.com/tauquirahmed93)
+* **Tauquir Ahmed** - *Initial work* - [tahmed1994](https://github.com/tahmed1994)
 
 ## License
 
