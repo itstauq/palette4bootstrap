@@ -1,6 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?><module codename="org.tauquir.palette4bootstrap">
-    <module_version install_time="1503919333909" last="true" origin="installer" specification_version="1.2.0">
-        <file crc="3463573371" name="config/Modules/org-tauquir-palette4bootstrap.xml"/>
-        <file crc="1344756287" name="modules/org-tauquir-palette4bootstrap.jar"/>
-    </module_version>
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE module_updates PUBLIC "-//NetBeans//DTD Autoupdate Catalog 2.6//EN" "http://www.netbeans.org/dtds/autoupdate-catalog-2_6.dtd">
+<module_updates timestamp="22/41/06/02/09/2017">
+
+
+
+<module codenamebase="org.tauquir.palette4bootstrap" distribution="org-tauquir-palette4bootstrap.nbm" downloadsize="1241657" homepage="https://github.com/tahmed1994/palette4bootstrap" license="F215EC0D" moduleauthor="Tauquir Ahmed" needsrestart="false" releasedate="2017/09/02">
+    <manifest AutoUpdate-Show-In-Client="true" OpenIDE-Module="org.tauquir.palette4bootstrap" OpenIDE-Module-Display-Category="Web Applications" OpenIDE-Module-Implementation-Version="170902" OpenIDE-Module-Java-Dependencies="Java &gt; 1.8" OpenIDE-Module-Long-Description="This is a module for the NetBeans IDE which adds new palettes inside the HTML palette. Access the palette from the menu bar -&gt; Window -&gt; IDE Tools -&gt; Palette or using shortcut Ctrl+Shift+8 after opening any html based file inside the Editor Window. After that, you can drag'n'drop the items into your HTML files. An option panel is then shown for the supported components where various attributes can be configured and live preview can be seen for the components." OpenIDE-Module-Module-Dependencies="org.netbeans.modules.editor/3 &gt; 1.87.1.6.3.24.56, org.netbeans.spi.palette/1 &gt; 1.46.1, org.openide.awt &gt; 7.67.1, org.openide.dialogs &gt; 7.42.1, org.openide.filesystems &gt; 9.10.2, org.openide.text &gt; 6.67.1, org.openide.util &gt; 9.7.1, org.openide.util.lookup &gt; 8.33.1, org.openide.util.ui &gt; 9.6.1" OpenIDE-Module-Name="palette4bootstrap" OpenIDE-Module-Requires="org.openide.modules.ModuleFormat1" OpenIDE-Module-Short-Description="A Netbeans IDE palette plugin for the Twitter Bootstrap Framework" OpenIDE-Module-Specification-Version="1.2.0"/>
+    
 </module>
+
+<license name="F215EC0D" url="licenses/F215EC0D.license"/>
+</module_updates>
+
