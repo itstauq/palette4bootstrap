@@ -5,4 +5,15 @@
 <project name="org.tauquir.palette4bootstrap" default="netbeans" basedir=".">
     <description>Builds, tests, and runs the project org.tauquir.palette4bootstrap.</description>
     <import file="nbproject/build-impl.xml"/>
+    <!-- Generate updates.xml -->
+    <target name="nbm" depends="projectized-common.nbm">
+        <makeupdatedesc desc="${build.dir}/updates.xml"
+                        distbase="."
+                        automaticgrouping="false"
+                        uselicenseurl="true">
+            <fileset dir="${build.dir}">
+                <include name="*.nbm" />
+            </fileset>
+        </makeupdatedesc>
+    </target>
 </project>
